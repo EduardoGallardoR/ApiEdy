@@ -76,9 +76,18 @@ WSGI_APPLICATION = 'APIEDU.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'postgresql': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'formularios',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': 'localhost', # o la dirección de tu servidor de base de datos
+        'PORT': '5432', # el puerto por defecto para PostgreSQL
     }
 }
 
@@ -123,5 +132,13 @@ STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com' #Servidor SMTP de Gmail
+EMAIL_PORT = 587 #Puerto SMTP de Gmail (TLS)
+EMAIL_USE_TLS = True #Usar cifrado TLS
+EMAIL_HOST_USER = 'legara821@gmail.com'  # Tu dirección de correo de Gmail
+EMAIL_HOST_PASSWORD = 'krefrnlttwrzcpiy'  # Contraseña de aplicación o contraseña específica de la aplicación
+DEFAULT_FROM_EMAIL = 'legara821@gmail.com'#Tu Direccion de correo predeterminada
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
