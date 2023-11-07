@@ -23,7 +23,7 @@ from django import forms
 #        db_table='alumno_has_genero'
 
 class Usuario(models.Model):
-    idUsuario = models.IntegerField(primary_key=True, db_column="idusu")
+    idUsuario = models.AutoField(primary_key=True, db_column="idusu")
     nombreu = models.CharField(max_length=100, db_column="nombre")
     apellidou = models.CharField(max_length=100,db_column="apellido")
     correou = models.CharField(max_length=100, db_column="correo", unique=True)
@@ -33,7 +33,7 @@ class Usuario(models.Model):
 
 
 class Encuesta(models.Model):
-    id_respuesta = models.IntegerField(primary_key=True, db_column="idrespuesta")
+    id_respuesta = models.AutoField(primary_key=True, db_column="idrespuesta")
     colore = models.CharField(max_length=100, db_column="color")
     frecuenciacome = models.CharField(max_length=100, db_column="frecuenciacom")
     alquiladoañoe = models.CharField(max_length=100,db_column='alquilado')

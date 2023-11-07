@@ -83,7 +83,7 @@ DATABASES = {
     },
     'postgresql': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'formularios',
+        'NAME': 'db_inflables',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost', # o la dirección de tu servidor de base de datos
