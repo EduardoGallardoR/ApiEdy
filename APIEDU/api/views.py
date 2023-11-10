@@ -16,6 +16,10 @@ class Inicio (APIView):
     template_name="index.html"
     def get(self,request):
         return render(request,self.template_name)
+class power (APIView):
+    template_name="dashboard.html"
+    def get(self,request):
+        return render(request,self.template_name)
 
     
 class Listing (APIView):
