@@ -11,6 +11,14 @@ class Home (APIView):
     template_name="login.html"
     def get(self,request):
         return render(request,self.template_name)
+class cancel (APIView):
+    template_name="cancel.html"
+    def get(self,request):
+        return render(request,self.template_name)
+class success (APIView):
+    template_name="success.html"
+    def get(self,request):
+        return render(request,self.template_name)
 
 class Inicio (APIView):
     template_name="index.html"
@@ -91,4 +99,33 @@ def form_verificado(request):
     else:
         return render(request, 'registro.html')
         
+from django.shortcuts import render
 
+from paypal.standard.forms import PayPalPaymentsForm
+from django.conf import settings
+import uuid 
+
+def CheckOut(request):
+
+    
+
+    host = request.get_host()
+
+    paypal_checkout = {
+        'business': settings.PAYPAL_RECEIVER_EMAIL,
+        'amount': '1',
+        'item_name': 'Inflafeliz',
+        'invoice': uuid.uuid4(),
+        'currency_code': 'MXN',
+        'return_url': "http://127.0.0.1:8000/payment/",
+        'return_url': "http://127.0.0.1:8000/success/",
+        'cancel_url': "http://127.0.0.1:8000/cancel/"
+    }
+
+    paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
+
+    context = {
+        'product': '1',
+        'paypal': paypal_payment
+    }
+    return render(request,'pago.html', context)

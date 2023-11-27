@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'paypalrestsdk'
 ]
 
 MIDDLEWARE = [
@@ -136,5 +137,7 @@ EMAIL_USE_TLS = True #Usar cifrado TLS
 EMAIL_HOST_USER = 'legara821@gmail.com'  # Tu dirección de correo de Gmail
 EMAIL_HOST_PASSWORD = 'krefrnlttwrzcpiy'  # Contraseña de aplicación o contraseña específica de la aplicación
 DEFAULT_FROM_EMAIL = 'legara821@gmail.com'#Tu Direccion de correo predeterminada
-
+PAYPAL_RECEIVER_EMAIL= 'sb-tuti228214631@business.example.com'
+PAYPAL_TEST= True
+ 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

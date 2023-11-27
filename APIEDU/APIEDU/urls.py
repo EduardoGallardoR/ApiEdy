@@ -19,6 +19,8 @@ from api.views import Home
 from api.views import Inicio
 from api.views import power
 from api.views import Listing
+from api.views import CheckOut
+
 from api import views
 
 urlpatterns = [
@@ -27,6 +29,8 @@ urlpatterns = [
     path('',Inicio.as_view(),name='index'),
     path('listing/',Listing.as_view(),name='listing'),
     path('Registro/', views.form_verificado, name='Registro'),
-    path('dashboard/', power.as_view(), name='dash')
-
+    path('dashboard/', power.as_view(), name='dash'),
+    path('payment/', views.CheckOut, name='payment'),
+    path('success/', views.success, name='success'),
+    path('cancel/', views.cancel, name='cancel'),
 ]
