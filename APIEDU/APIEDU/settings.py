@@ -73,7 +73,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'APIEDU.wsgi.application'
 
 
-# Database
+# Databasee
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
