@@ -126,7 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
 
+STATICFILES_DIRS = [BASE_DIR / "static"] # new
+STATIC_ROOT = BASE_DIR / "staticfiles" # new
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -141,3 +144,5 @@ PAYPAL_RECEIVER_EMAIL= 'sb-tuti228214631@business.example.com'
 PAYPAL_TEST= True
  
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
